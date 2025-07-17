@@ -1,13 +1,17 @@
 class Solution {
     public int missingNumber(int[] nums) {
         int n=nums.length;
-        int[] hash=new int[n+1];
-        for(int i=0;i<n;i++){
-            hash[nums[i]]=1;
+        int m=0;
+        for(int i=0;i<=n;i++){
+            int k=0;
+            for(int j=0;j<n;j++){
+                if(nums[j]==i){
+                    k=1;
+                    break;
+                }
+            }
+            if(k==0) m=i;
         }
-        for(int i=0;i<n+1;i++){
-            if(hash[i]==0) return i;
-        }
-        return 0;
+        return m;
     }
 }
