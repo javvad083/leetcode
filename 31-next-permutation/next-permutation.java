@@ -28,7 +28,7 @@ class Solution {
             }
         }
         int l=ind+1,r=n-1;
-        while(l<=r){
+        while(l<r){
             int t=nums[l];
             nums[l]=nums[r];
             nums[r]=t;
